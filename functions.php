@@ -2,20 +2,15 @@
 
 /**
  * functions.php
- *
- * Direk olarak çalıştırılmasını istemediğimiz betik dosyasıdır.
- * Bu dosya başka bir yerde dahil edilmediyse çalıştırılmasını engellemek istiyoruz.
- * Örneğin, `http://localhost/functions.php` adresiyle ziyaret etmek istediğimizde,
- * bir hata mesajı verip betiğin sonlanmasını istiyoruz.
- *
- * > Betiği herhangi bir yerde sonlandırmak için `exit`
- * > (https://www.php.net/manual/en/function.exit.php) veya `die` kullanabilirsiniz.
- *
- * Bu dosyada tanımlanan fonksiyonları diğer iki betik dosyasında kullanmanızı
- * istiyoruz. Ek olarak, `getRandomPostCount` isminde bir fonksiyon tanımlamanızı
- * bekliyoruz. Bununla ilgili detaylı bilgi diğer betiklerde yer alıyor.
  */
 
+ $file_base = basename(__FILE__);
+ $server_base = basename($_SERVER['PHP_SELF']);
+
+ // iki dosyanın isimleri eşit ise 
+ if($server_base == $file_base) { 
+    die ("$file_base dosyasına doğrudan erişilemez"); 
+ }else { // Eğer iki dosyanın isimleri eşit değil ise aşağıdaki kodları çalıştırır  
 function getLatestPosts($count = 5)
 {
     $posts = [];
@@ -48,4 +43,10 @@ EOT;
 }
 
 // Aşağıya fonksiyonu tanımlayabilirsiniz.
+
+    function getRandomPostCount($min, $max) { // Belirlenen iki aralıkta rastgele sayı döndürür
+        return rand($min, $max); 
+    }
+      
+ 
 
