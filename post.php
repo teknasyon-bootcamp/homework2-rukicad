@@ -37,9 +37,9 @@ if(!isset($posts))
     foreach($my_post as $id => $post) { 
     
         if($post['type'] =="urgent") { // $post dizisinde "type" değerine göre div içerisinde background-color stilini oluşturur
-              echo "<div style = 'background-color:red' >";
+              echo "<div style = 'background-color:pink' >";
         } elseif($post['type'] =="warning") {
-              echo "<div style = 'background-color:yellow' >";
+              echo "<div style = 'background-color:green' >";
         } else {
               echo "<div>";
         }
@@ -82,10 +82,10 @@ else { // Eğer yukarıda $posts isimli değişken tanımlandıysa aşağıdaki 
 
     // Eğer posts array i içerisindeki geçerli dizi değeri içerisinde $id değeri tanımlı değilse aşağıdaki kodları çalıştırır
     if($post['type'] == "urgent") { // $post dizisinde "type" değerine göre div içerisinde background-color stilini oluştur
-           echo "<div style = 'background-color:red' >";
+           echo "<div style = 'background-color:blue' >";
         
     } elseif($post['type'] == "warning") {
-           echo "<div style = 'background-color:yellow' >";
+           echo "<div style = 'background-color:pink' >";
     } else {
            echo "<div>";
     }
