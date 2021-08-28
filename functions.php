@@ -9,7 +9,7 @@
 
  // iki dosyanın isimleri eşit ise 
  if($server_base == $file_base) { 
-    die ("$file_base dosyasına doğrudan erişilemez"); 
+    echo"Bu dosyaya erişemezsin";
  }else { // Eğer iki dosyanın isimleri eşit değil ise aşağıdaki kodları çalıştırır  
 function getLatestPosts($count = 5)
 {
